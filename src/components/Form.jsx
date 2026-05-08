@@ -24,8 +24,6 @@ export default function Form({ addProject }) {
     return (
         <>
         <form onSubmit={handleSubmit}>
-            <h1>Add Project</h1>
-            {/* <label>Title</label> */}
             <br />
             <TextField   
                 label="Title" 
@@ -45,7 +43,6 @@ export default function Form({ addProject }) {
                 />
             <br />
             <br />
-            {/* <label>Description</label> */}
             <br />
             <TextField 
                 label="Description"
