@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Button } from "@mui/material"
+import {TextField} from "@mui/material"
 
 export default function Form({ addProject }) {
     const [title , setTitle] = useState("")
@@ -23,17 +25,49 @@ export default function Form({ addProject }) {
         <>
         <form onSubmit={handleSubmit}>
             <h1>Add Project</h1>
-            <label>Title</label>
+            {/* <label>Title</label> */}
             <br />
-            <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <TextField   
+                label="Title" 
+                sx={{ 
+                    input: { color: 'white' }, 
+                    "& .MuiInputLabel-root": { color: 'white' }, // Changes label color
+                    "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "white" }, // Changes border color
+                    }
+                }}  
+                id="outlined-basic" 
+                variant="outlined" 
+                type="text" 
+                name="title" 
+                value={title} 
+                onChange={(e) => setTitle(e.target.value)}
+                />
             <br />
             <br />
-            <label>Description</label>
+            {/* <label>Description</label> */}
             <br />
-            <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+            <TextField 
+                label="Description"
+                sx={{ 
+                    input: { color: 'white' }, 
+                    "& .MuiInputLabel-root": { color: 'white' }, // Changes label color
+                    "& .MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "white" }, // Changes border color
+                    }
+                }}  
+                id="outlined-basic" 
+                variant="outlined" 
+                type="text" 
+                name="description" 
+                value={description} 
+                onChange={(e) => setDescription(e.target.value)}
+                />
             <br />
             <br />
-            <button type="submit">Add</button>
+            <Button variant="contained" type="submit">Add</Button>
+            <br />
+            <br />
         </form>
         </>
     )

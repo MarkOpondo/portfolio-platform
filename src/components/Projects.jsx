@@ -5,7 +5,7 @@ export default function Projects({ projects, setSearchWord }) {
     return (
         <>
         <Search setSearchWord={setSearchWord}/>
-        {projects.map((project) => (<Project key={project.id} project={project}/>))}
+        {projects.map(project => <Project key={project.id} project={project}/>)}
         </>
     )
 }
